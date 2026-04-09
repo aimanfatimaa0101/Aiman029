@@ -1,0 +1,32 @@
+<%- include('./partials/header') %>
+
+<div class="auth-container my-5">
+  <div class="card p-4">
+    <h2 class="text-center fw-bold mb-4">Create an Account</h2>
+    <form action="/register" method="POST">
+      <div class="mb-3">
+        <label for="name" class="form-label fw-semibold">Full Name</label>
+        <input type="text" class="form-control" id="name" name="name" required placeholder="Jane Doe">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label fw-semibold">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" required placeholder="name@example.com">
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label fw-semibold">Password</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+      </div>
+      <div class="mb-4">
+        <label class="form-label fw-semibold">I want to join as a:</label>
+        <select class="form-select" name="role" required>
+          <option value="Client">Client (Hire talent)</option>
+          <option value="Freelancer">Freelancer (Find work)</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary w-100 py-2">Sign Up</button>
+      <p class="text-center mt-3 text-muted">Already have an account? <a href="/login" class="text-decoration-none">Log In</a></p>
+    </form>
+  </div>
+</div>
+
+<%- include('./partials/footer') %>

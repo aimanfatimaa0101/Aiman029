@@ -1,0 +1,53 @@
+<%- include('./partials/header') %>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h2 class="fw-bold">Freelancer Dashboard</h2>
+  <a href="/jobs" class="btn btn-outline-primary shadow-sm">Browse Jobs</a>
+</div>
+
+<div class="card">
+  <div class="card-header bg-light">
+    <h5 class="mb-0 fw-bold">Your Submitted Proposals</h5>
+  </div>
+  <div class="card-body p-0">
+    <% if(proposals && proposals.length > 0) { %>
+      <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+          <thead class="table-light">
+            <tr>
+              <th class="ps-4">Job Title</th>
+              <th>Your Bid</th>
+              <th>Job Status</th>
+              <th>Proposal Status</th>
+              <th class="pe-4">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% proposals.forEach(p => { %>
+              <tr>
+                <td class="ps-4"><a href="/jobs/<%= p.job._id %>" class="text-decoration-none fw-bold"><%= p.job.title %></a></td>
+                <td class="fw-semibold text-success">$<%= p.bidAmount %></td>
+                <td><span class="badge status-<%= p.job.status.replace(' ', '') %>"><%= p.job.status %></span></td>
+                <td>
+                  <span class="badge bg-<%= p.status === 'Accepted' ? 'success' : p.status === 'Rejected' ? 'danger' : 'secondary' %> px-2 py-1">
+                    <%= p.status %>
+                  </span>
+                </td>
+                <td class="pe-4">
+                  <a href="/jobs/<%= p.job._id %>" class="btn btn-sm btn-outline-secondary">Details</a>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    <% } else { %>
+      <div class="p-4 text-center">
+        <p class="text-muted mb-3">You haven't submitted any proposals yet.</p>
+        <a href="/jobs" class="btn btn-primary shadow-sm">Find Work</a>
+      </div>
+    <% } %>
+  </div>
+</div>
+
+<%- include('./partials/footer') %>

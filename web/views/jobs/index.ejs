@@ -1,0 +1,75 @@
+<%- include('../partials/header') %>
+
+<div class="row mb-5">
+  <div class="col-12 text-center hero-section py-4 mb-0 shadow-sm" style="background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);">
+    <h2 class="fw-bold mb-2 text-white">Find Your Next Gig</h2>
+    <p class="text-white opacity-75">Browse thousands of jobs posted by top clients.</p>
+  </div>
+</div>
+
+<div class="row align-items-start">
+  <!-- Filters Sidebar -->
+  <div class="col-lg-3 mb-4 sticky-top" style="top: 80px; z-index: 10;">
+    <div class="card p-3 shadow-sm border-0">
+      <h5 class="fw-bold mb-3">Search & Filter</h5>
+      <form action="/jobs" method="GET">
+        <div class="mb-3">
+          <label class="form-label fw-semibold text-muted small">Search by Title</label>
+          <input type="text" name="search" class="form-control" placeholder="e.g. React Developer" value="<%= typeof search !== 'undefined' ? search : '' %>">
+        </div>
+        <div class="mb-3">
+          <label class="form-label fw-semibold text-muted small">Status</label>
+          <select name="status" class="form-select">
+            <option value="">All Statuses</option>
+            <option value="Open" <%= typeof status !== 'undefined' && status === 'Open' ? 'selected' : '' %>>Open</option>
+            <option value="In Progress" <%= typeof status !== 'undefined' && status === 'In Progress' ? 'selected' : '' %>>In Progress</option>
+            <option value="Completed" <%= typeof status !== 'undefined' && status === 'Completed' ? 'selected' : '' %>>Completed</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label fw-semibold text-muted small">Budget Range</label>
+          <div class="d-flex align-items-center gap-2">
+            <input type="number" name="minBudget" class="form-control" placeholder="Min" value="<%= typeof minBudget !== 'undefined' ? minBudget : '' %>">
+            <span>-</span>
+            <input type="number" name="maxBudget" class="form-control" placeholder="Max" value="<%= typeof maxBudget !== 'undefined' ? maxBudget : '' %>">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 fw-bold">Filter Jobs</button>
+        <a href="/jobs" class="btn btn-outline-secondary w-100 mt-2">Clear</a>
+      </form>
+    </div>
+  </div>
+
+  <!-- Job Listings -->
+  <div class="col-lg-9">
+    <% if(jobs && jobs.length > 0) { %>
+      <div class="row g-4">
+        <% jobs.forEach(job => { %>
+          <div class="col-md-6">
+            <div class="card h-100 job-card border-0 shadow-sm p-3">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h5 class="card-title fw-bold text-dark mb-0"><%= job.title %></h5>
+                  <span class="badge status-<%= job.status.replace(' ', '') %> ms-2 shadow-sm"><%= job.status %></span>
+                </div>
+                <h6 class="card-subtitle mb-3 text-success fw-bold">Budget: $<%= job.budget %></h6>
+                <p class="card-text text-muted mb-4 text-truncate" style="max-height: 4.5em; white-space: pre-wrap;"><%= job.description %></p>
+                <div class="mt-auto d-flex justify-content-between align-items-center">
+                  <small class="text-muted fw-semibold">Posted by <%= job.createdBy.name %></small>
+                  <a href="/jobs/<%= job._id %>" class="btn btn-outline-primary btn-sm px-3 shadow-sm fw-bold">View Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } else { %>
+      <div class="text-center py-5 bg-white rounded shadow-sm">
+        <h4 class="text-muted fw-bold">No jobs found matching your criteria.</h4>
+        <p class="text-muted">Try adjusting your search or filter settings.</p>
+      </div>
+    <% } %>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>
