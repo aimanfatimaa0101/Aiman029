@@ -1,11 +1,19 @@
 <img width="865" height="431" alt="image" src="https://github.com/user-attachments/assets/80276065-0757-4ecf-9556-e12cf60209df" />
+
 <img width="864" height="401" alt="image" src="https://github.com/user-attachments/assets/07920d86-f08e-47e6-a9e8-baecf2d0c4df" />
+
 <img width="863" height="429" alt="image" src="https://github.com/user-attachments/assets/f9123f0e-ea8e-48b1-be70-d28def436de8" />
+
 <img width="864" height="396" alt="image" src="https://github.com/user-attachments/assets/13e0a318-d861-422d-b623-83a21a0ce98a" />
+
 <img width="863" height="353" alt="image" src="https://github.com/user-attachments/assets/894f4bb3-7873-4535-bdf3-d46c268828e2" />
+
 <img width="864" height="389" alt="image" src="https://github.com/user-attachments/assets/6e82870d-87d0-4c91-ade0-c39804db3609" />
+
 <img width="864" height="381" alt="image" src="https://github.com/user-attachments/assets/169c6418-669a-4a4e-ab73-095809b344eb" />
+
 <img width="864" height="393" alt="image" src="https://github.com/user-attachments/assets/9dd6bf5a-fe96-4f1b-b625-c3a8d11434e9" />
+
 <img width="773" height="1127" alt="image" src="https://github.com/user-attachments/assets/eeff20ce-5202-4a17-b2c2-8685a3eb71c6" />
 
 
@@ -22,9 +30,9 @@
 
 
 
-# 🚀 SkillLink – Freelance Marketplace Web Application
+#  SkillLink – Freelance Marketplace Web Application
 
-## 📌 Project Overview
+##  Project Overview
 
 SkillLink is a full-stack web application that connects clients with freelancers. It allows clients to post jobs and freelancers to apply by submitting proposals. The system is built using Node.js, Express.js, MongoDB, EJS, and Bootstrap, following RESTful API principles.
 
@@ -32,7 +40,7 @@ This project demonstrates modern web development practices including authenticat
 
 ---
 
-## 🎯 Objectives
+## Objectives
 
 * Design and implement a RESTful API
 * Perform CRUD operations using MongoDB
@@ -42,9 +50,9 @@ This project demonstrates modern web development practices including authenticat
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
-### 🔹 Backend
+###  Backend
 
 * Node.js
 * Express.js
@@ -52,12 +60,12 @@ This project demonstrates modern web development practices including authenticat
 * dotenv
 * bcryptjs
 
-### 🔹 Frontend
+###  Frontend
 
 * EJS (Embedded JavaScript Templates)
 * Bootstrap 5
 
-### 🔹 Tools
+###  Tools
 
 * MongoDB Compass
 * VS Code
@@ -65,9 +73,9 @@ This project demonstrates modern web development practices including authenticat
 
 ---
 
-## 🧩 Features
+##  Features
 
-### 👤 1. User Authentication
+###  1. User Authentication
 
 * User registration and login
 * Password hashing using bcrypt
@@ -75,7 +83,7 @@ This project demonstrates modern web development practices including authenticat
 
 ---
 
-### 💼 2. Job Management (CRUD)
+###  2. Job Management (CRUD)
 
 * Create job postings
 * View all jobs
@@ -92,7 +100,7 @@ Each job contains:
 
 ---
 
-### 📩 3. Proposal System
+### 3. Proposal System
 
 * Freelancers can apply to jobs
 * Submit:
@@ -106,7 +114,7 @@ Each job contains:
 
 ---
 
-### 🔄 4. Job Workflow
+###  4. Job Workflow
 
 * Job status management:
 
@@ -116,14 +124,14 @@ Each job contains:
 
 ---
 
-### 🔍 5. Search & Filtering (Extra Feature)
+###  5. Search & Filtering (Extra Feature)
 
 * Search jobs by title
 * Filter jobs by status or budget
 
 ---
 
-### 👥 6. Role-Based Access Control
+###  6. Role-Based Access Control
 
 * Clients:
 
@@ -134,14 +142,14 @@ Each job contains:
 
 ---
 
-### 🎨 7. Dynamic Views (EJS)
+###  7. Dynamic Views (EJS)
 
 * Server-side rendering using EJS
 * Dynamic job listings and dashboards
 
 ---
 
-### 📱 8. Responsive UI (Bootstrap)
+###  8. Responsive UI (Bootstrap)
 
 * Mobile-friendly layout
 * Components used:
@@ -153,7 +161,7 @@ Each job contains:
 
 ---
 
-## 🗄️ Database Design
+##  Database Design
 
 ### Collections:
 
@@ -168,9 +176,9 @@ Each job contains:
 
 ---
 
-## 🔗 API Endpoints
+##  API Endpoints
 
-### 🔐 Authentication
+###  Authentication
 
 | Method | Endpoint           | Description   |
 | ------ | ------------------ | ------------- |
@@ -179,7 +187,7 @@ Each job contains:
 
 ---
 
-### 💼 Jobs
+###  Jobs
 
 | Method | Endpoint      | Description    |
 | ------ | ------------- | -------------- |
@@ -191,7 +199,7 @@ Each job contains:
 
 ---
 
-### 📩 Proposals
+###  Proposals
 
 | Method | Endpoint                  | Description             |
 | ------ | ------------------------- | ----------------------- |
@@ -201,7 +209,7 @@ Each job contains:
 
 ---
 
-## ⚙️ Project Structure
+##  Project Structure
 
 ```
 skilllink/
@@ -220,7 +228,7 @@ skilllink/
 
 ---
 
-## 🧠 Concepts Used
+##  Concepts Used
 
 ### ✔ RESTful API Design
 
@@ -230,7 +238,7 @@ skilllink/
 
 ---
 
-### ✔ MVC Architecture
+###  MVC Architecture
 
 * Models → database schema
 * Routes → API endpoints
@@ -238,14 +246,14 @@ skilllink/
 
 ---
 
-### ✔ Authentication & Security
+### Authentication & Security
 
 * Password hashing using bcrypt
 * Role-based access
 
 ---
 
-### ✔ Database Integration
+### Database Integration
 
 * MongoDB with Mongoose
 * Schema validation
@@ -253,26 +261,26 @@ skilllink/
 
 ---
 
-### ✔ Server-Side Rendering
+###  Server-Side Rendering
 
 * EJS for dynamic HTML generation
 
 ---
 
-### ✔ Responsive Design
+###  Responsive Design
 
 * Bootstrap for UI components and layout
 
 ---
 
-### ✔ Error Handling
+###  Error Handling
 
 * Try-catch blocks
 * Proper HTTP status codes
 
 ---
 
-## ▶️ How to Run the Project
+##  How to Run the Project
 
 ### 1. Clone Repository
 
@@ -324,7 +332,7 @@ http://localhost:3000
 
 ---
 
-## 🌟 Future Improvements
+##  Future Improvements
 
 * Real-time chat system
 * Payment integration
@@ -334,13 +342,13 @@ http://localhost:3000
 
 ---
 
-## 🏆 Conclusion
+##  Conclusion
 
 SkillLink is a complete full-stack web application that demonstrates real-world system design using REST APIs, database integration, and dynamic UI rendering. It is scalable, maintainable, and suitable for portfolio and academic submission.
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 Your Name Aiman Fatima 
 Registration Number SP23-BSE-029
