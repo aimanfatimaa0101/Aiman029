@@ -240,48 +240,6 @@ Tests cover: registration, login, auth protection, flashcard CRUD, stats endpoin
 
 ---
 
-## 🚀 Deployment
-
-### Frontend → Vercel
-
-```bash
-cd client
-npm run build
-
-# Install Vercel CLI
-npm i -g vercel
-vercel --prod
-```
-
-Add environment variable in Vercel dashboard:
-- `VITE_API_URL` = `https://your-backend.onrender.com/api`
-
-### Backend → Render
-
-1. Create a new **Web Service** on [render.com](https://render.com)
-2. Connect your GitHub repo
-3. Set **Root Directory** to `server`
-4. Set **Build Command**: `npm install`
-5. Set **Start Command**: `npm start`
-6. Add environment variables:
-   - `MONGO_URI` = your Atlas URI
-   - `JWT_SECRET` = strong random string
-   - `OPENAI_API_KEY` = your key
-   - `CLIENT_URL` = your Vercel URL
-   - `NODE_ENV` = production
-
-### Database → MongoDB Atlas
-
-1. Create free cluster at [mongodb.com/cloud/atlas](https://www.mongodb.com/cloud/atlas)
-2. Create database user
-3. Whitelist Render's IPs (or allow all: `0.0.0.0/0`)
-4. Copy connection string → set as `MONGO_URI`
-
----
-
-## 📸 Screenshots
-
-> Add screenshots of: Dashboard, Generator, Review Mode, Quiz Mode, AI Agent
 
 ---
 
