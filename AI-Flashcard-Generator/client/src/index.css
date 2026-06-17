@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    @apply bg-slate-950 text-white;
+    background-image:
+      radial-gradient(ellipse 80% 80% at 50% -20%, rgba(99,102,241,0.15), transparent),
+      radial-gradient(ellipse 60% 60% at 80% 80%, rgba(139,92,246,0.08), transparent);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:bg-white/10 hover:border-white/20 hover:shadow-xl hover:shadow-primary-500/5;
+  }
+
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-500 text-white font-semibold px-6 py-2.5 rounded-xl
+           transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed
+           hover:shadow-lg hover:shadow-primary-500/25 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-white/10 hover:bg-white/20 text-white font-medium px-5 py-2.5 rounded-xl
+           border border-white/10 hover:border-white/20 transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed active:scale-95;
+  }
+
+  .btn-danger {
+    @apply bg-red-500/20 hover:bg-red-500/30 text-red-400 hover:text-red-300 font-medium px-5 py-2.5 rounded-xl
+           border border-red-500/20 hover:border-red-500/40 transition-all duration-200 active:scale-95;
+  }
+
+  .input-field {
+    @apply w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white
+           placeholder-white/30 focus:outline-none focus:border-primary-500/50 focus:bg-white/10
+           transition-all duration-200 text-sm;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-white/70 mb-1.5;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold text-white;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-400 to-violet-400 bg-clip-text text-transparent;
+  }
+}
+
+/* Flip card styles */
+.perspective { perspective: 1000px; }
+.flip-card { transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(0.4,0,0.2,1); }
+.flip-card.flipped { transform: rotateY(180deg); }
+.card-face { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.card-back { transform: rotateY(180deg); }
+/* Standard select box aur uske options ko dark theme dena */
+select {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+/* Dropdown list (options) ka white background theek karne ke liye */
+select option {
+  background-color: #020617; /* Slate-950 (Aapka body background color) */
+  color: #ffffff;            /* Text color pure white */
+  padding: 10px;
+}
+
+
+.input-field option {
+  background-color: #0f172a; /* Slate-900 (Thoda light dark) */
+  color: #ffffff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { @apply bg-white/5; }
+::-webkit-scrollbar-thumb { @apply bg-white/20 rounded-full; }
+::-webkit-scrollbar-thumb:hover { @apply bg-white/30; }
+
+/* Markdown styles inside agent */
+.markdown h1, .markdown h2, .markdown h3 { @apply font-bold text-white mb-2 mt-4; }
+.markdown h1 { @apply text-xl; }
+.markdown h2 { @apply text-lg; }
+.markdown h3 { @apply text-base; }
+.markdown p { @apply text-white/80 mb-3 leading-relaxed; }
+.markdown ul, .markdown ol { @apply ml-5 mb-3 space-y-1; }
+.markdown li { @apply text-white/80; }
+.markdown ul li { @apply list-disc; }
+.markdown ol li { @apply list-decimal; }
+.markdown strong { @apply text-white font-semibold; }
+.markdown code { @apply bg-white/10 rounded px-1.5 py-0.5 text-primary-300 text-sm font-mono; }
+.markdown pre { @apply bg-white/5 rounded-xl p-4 overflow-x-auto mb-3; }
+.markdown blockquote { @apply border-l-4 border-primary-500 pl-4 italic text-white/60; }
